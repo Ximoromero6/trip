@@ -12,21 +12,41 @@
 
 <body>
     <header id="header">
+        <button class="open_menu_button" aria-label="Open Mobile Menu">
+            <img src="assets/images/mobile__menu__image.svg" alt="" loading="lazy">
+        </button>
+        <a href="" class="logo">
+            <p>Travigo</p>
+        </a>
         <div class="container">
             <a href="" class="logo">
                 <p>Travigo</p>
             </a>
             <ul class="menu">
-                <li><a href="" class="active"><span>Home</span></a></li>
-                <li><a href=""><span>About</span></a></li>
-                <li><a href=""><span>Pricing</span></a></li>
-                <li><a href=""><span>Contact</span></a></li>
-                <li><a href=""><span>Blog</span></a></li>
+                <li>
+                    <a href="" class="active"><img src="assets/images/mobile__menu__home.svg" alt="" loading="lazy" class="mobile__menu__icon"><span>Home</span></a>
+                </li>
+                <li>
+                    <a href=""><img src="assets/images/mobile__menu__about.svg" alt="" loading="lazy" class="mobile__menu__icon"><span>About</span></a>
+                </li>
+                <li>
+                    <a href=""><img src="assets/images/mobile__menu__pricing.svg" alt="" loading="lazy" class="mobile__menu__icon"><span>Pricing</span></a>
+                </li>
+                <li>
+                    <a href=""><img src="assets/images/mobile__menu__contact.svg" alt="" loading="lazy" class="mobile__menu__icon"><span>Contact</span></a>
+                </li>
+                <li>
+                    <a href=""><img src="assets/images/mobile__menu__blog.svg" alt="" loading="lazy" class="mobile__menu__icon"><span>Blog</span></a>
+                </li>
             </ul>
             <div class="user">
                 <button class="main__button white">Login</button>
                 <button class="main__button green">Register</button>
             </div>
+
+            <button class="close_menu_button" aria-label="Close Mobile Menu">
+                <img src="assets/images/mobile__menu__close.svg" alt="" loading="lazy">
+            </button>
         </div>
     </header>
     <main>
@@ -45,6 +65,7 @@
         </section>
     </main>
 
+    <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
     <script src="assets/js/app.js"></script>
 </body>
 

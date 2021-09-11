@@ -6,7 +6,7 @@
     let getIMage = () => {
         let xhttp = new XMLHttpRequest(),
             random = Math.floor(Math.random() * 50);
-        console.log(random);
+
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 let random__photo = JSON.parse(xhttp.responseText)[random];
@@ -18,4 +18,15 @@
     };
 
     getIMage();
+
+    let container_mobile = document.querySelector("#header > div.container");
+
+    document.querySelector(".open_menu_button").addEventListener("click", () => {
+        container_mobile.classList.add("open");
+    });
+
+    document.querySelector(".close_menu_button").addEventListener("click", () => {
+        container_mobile.classList.remove("open");
+    });
+
 })();
