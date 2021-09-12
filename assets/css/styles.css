@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 /* Colors */
 /* Colors */
-a:focus {
+a:focus,
+button:focus {
   outline-style: dashed;
   outline-color: #1EC28B;
   outline-width: 1px;
@@ -92,9 +93,9 @@ header#header a.logo {
           align-items: center;
   /* width: 30%; */
   height: 60px;
-  /*  background-color: #fff; */
+  background-color: transparent;
   padding: 0 15px;
-  z-index: 10;
+  z-index: 11;
 }
 
 header#header a.logo::after {
@@ -125,54 +126,11 @@ header#header .container {
   z-index: 10;
 }
 
-header#header .container a.logo {
-  text-decoration: none;
-  color: #2B2844;
-  font-weight: 900;
-  font-size: 28px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* animation: fadeInDown 1s; */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  height: 60px;
-  background-color: #fff;
-  padding: 0 15px;
-  z-index: 10;
-  /* text-decoration: none;
-            color: $dark__black;
-            font-weight: 900;
-            font-size: 28px;
-            position: absolute;
-            left: 15px;
-            z-index: 99;
-            animation: fadeInDown 1s; */
-}
-
-header#header .container a.logo::after {
-  content: url("../images/plane__logo.svg");
-  width: 20px;
-  height: 20px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  position: absolute;
-  top: 6px;
-  right: 290px;
-  /*  top: -4px;
-                right: -18px; */
-}
-
 header#header .container ul.menu {
   width: 100%;
   height: 100vh;
   position: absolute;
-  top: 60px;
+  top: 80px;
   left: 0;
   background-color: #fff;
   z-index: 10;
@@ -180,16 +138,6 @@ header#header .container ul.menu {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /* width: 100%;
-            height: 100vh;
-            position: absolute;
-            display: block;
-            background-color: $white;
-            left: 0;
-            top: 0;
-            height: 100vh;
-            z-index: 999;
-            align-items: center; */
 }
 
 header#header .container ul.menu li {
@@ -234,13 +182,15 @@ header#header .container ul.menu li a {
                     position: relative; */
 }
 
-header#header .container ul.menu li a img {
-  margin-right: 6px;
+header#header .container ul.menu li a .mobile__menu__icon {
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
 }
 
 header#header .container ul.menu li a span {
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 18px;
+  /*   font-weight: 600; */
   color: #2B2844;
 }
 
@@ -258,18 +208,8 @@ header#header .container ul.menu li a.active::before {
   bottom: 0;
 }
 
-header#header .container ul.menu li a:hover::before {
-  content: "";
-  width: 12px;
-  height: 4px;
-  border-radius: 6px;
-  background-color: #1EC28B;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  bottom: 0;
-  /*  animation: fadeInUp .3s; */
+header#header .container ul.menu li a:hover {
+  color: #1EC28B;
 }
 
 header#header .container .user {
@@ -292,26 +232,19 @@ header#header .container .close_menu_button {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: transparent;
-  width: 35px;
-  height: 35px;
   border: none;
 }
 
-header#header .container .close_menu_button img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-header#header .container.open {
-  display: block;
+header#header .container .close_menu_button i {
+  font-size: 40px;
+  font-weight: lighter;
 }
 
 header#header .open_menu_button {
   position: absolute;
   top: 15px;
   right: 15px;
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -322,20 +255,26 @@ header#header .open_menu_button {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: transparent;
-  width: 35px;
-  height: 35px;
   border: none;
 }
 
-header#header .open_menu_button img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+header#header .open_menu_button i {
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+header#header.open .container {
+  display: block;
+  background-color: #fff;
+}
+
+header#header.open a.logo {
+  background-color: #fff;
 }
 
 main {
   position: relative;
+  overflow: scroll;
 }
 
 main::before {
@@ -351,6 +290,7 @@ main::before {
 }
 
 main::after {
+  display: none;
   content: "";
   position: absolute;
   right: -20px;
@@ -381,7 +321,7 @@ main section.home__section {
 }
 
 main section.home__section .container {
-  overflow-y: hidden;
+  /*  overflow-y: hidden; */
 }
 
 main section.home__section .container h1 {
@@ -418,8 +358,8 @@ main section.home__section .container .container__button button {
 }
 
 main section.home__section .container .background__main__section__container {
-  width: 100%;
-  height: 600px;
+  width: 90%;
+  height: 500px;
   margin: 80px auto;
   position: relative;
   cursor: pointer;
@@ -465,6 +405,56 @@ main section.home__section .container .background__main__section__container:hove
   }
 }
 
+main section.destinations__section {
+  margin: 130px auto 0 0;
+}
+
+main section.destinations__section .container {
+  padding: 30px 15px;
+  max-width: none;
+}
+
+main section.destinations__section .container .container__destinations {
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  max-height: 400px;
+  border-radius: 20px;
+  position: relative;
+}
+
+main section.destinations__section .container .container__destinations .destination {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin-right: 10px;
+  border-radius: 20px;
+}
+
+main section.destinations__section .container .container__destinations .destination img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+}
+
+main section.destinations__section .container .container__destinations .destination .text_section {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
 @media (min-width: 768px) {
   main::before {
     background-size: 120px auto;
@@ -476,7 +466,7 @@ main section.home__section .container .background__main__section__container:hove
     font-size: 90px;
   }
   main section.home__section .container p {
-    font-size: 90px;
+    font-size: 30px;
   }
   main section.home__section .container .background__main__section__container {
     width: 90%;

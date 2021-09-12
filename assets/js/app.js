@@ -19,7 +19,7 @@
 
     getIMage();
 
-    let container_mobile = document.querySelector("#header > div.container");
+    let container_mobile = document.querySelector("header#header");
 
     document.querySelector(".open_menu_button").addEventListener("click", () => {
         container_mobile.classList.add("open");
